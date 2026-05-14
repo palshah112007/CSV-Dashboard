@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSV Insight Dashboard</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">CSV Insight Dashboard</p>
+          <h1>Drop in any CSV. Get a dashboard that explains it.</h1>
+        </div>
+        <label class="upload-button">
+          <input id="csvFile" type="file" accept=".csv,text/csv">
+          <span>Upload CSV</span>
+        </label>
+      </section>
+
+      <section class="status-grid" aria-live="polite">
+        <div class="metric-tile">
+          <span>Rows</span>
+          <strong id="rowCount">0</strong>
+        </div>
+        <div class="metric-tile">
+          <span>Columns</span>
+          <strong id="columnCount">0</strong>
+        </div>
+        <div class="metric-tile">
+          <span>Numeric</span>
+          <strong id="numericCount">0</strong>
+        </div>
+        <div class="metric-tile">
+          <span>Date</span>
+          <strong id="dateCount">0</strong>
+        </div>
+        <div class="metric-tile">
+          <span>Category</span>
+          <strong id="categoryCount">0</strong>
+        </div>
+      </section>
+
+      <section class="analysis-band">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Column Intelligence</h2>
+            <span id="datasetName">Demo dataset</span>
+          </div>
+          <div id="columnsTable" class="columns-table"></div>
+        </div>
+        <div class="panel formula-panel">
+          <div class="panel-head">
+            <h2>Math Used</h2>
+            <span>transparent formulas</span>
+          </div>
+          <div id="formulaList" class="formula-list"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Automatic Chart Gallery</h2>
+          <span id="chartCount">0 charts selected</span>
+        </div>
+        <div id="chartGrid" class="chart-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Data Preview</h2>
+          <span id="previewCount">first rows</span>
+        </div>
+        <div id="previewTable" class="preview-table"></div>
+      </section>
+    </main>
+  </body>
+</html>
